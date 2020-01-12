@@ -1,0 +1,70 @@
+using System;
+
+namespace QuetesLesConditions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int limitOne;
+            int limitTwo;
+            int integer;
+
+            Console.WriteLine("Enter a integer which will be your first limit: ");
+            limitOne = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter a second integer which will be your second limit: ");
+            limitTwo = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter another integer: ");
+            integer = Convert.ToInt32(Console.ReadLine());
+
+            if (limitOne < limitTwo)
+            {
+                if (integer < limitOne)
+                {
+                    Console.WriteLine("You have entered " + integer + " which is lower than " + limitOne + " which is the minimum.");
+                    Console.WriteLine("Resulting integer: " + limitOne);
+                }
+
+                else if (integer > limitTwo)
+                {
+                    Console.WriteLine("You have entered " + integer + " which is greater than " + limitTwo + " which is the maximum.");
+                    Console.WriteLine("Resulting integer: " + limitTwo);
+                }
+
+                else if ((integer >= limitOne) && (integer <= limitTwo))
+                {
+                    Console.WriteLine("It's allright your value is between your two limits!");
+                    Console.WriteLine("Resulting integer: " + integer);
+                }
+            }
+
+            else if(limitOne > limitTwo)
+            {
+                if (integer < limitTwo)
+                {
+                    Console.WriteLine("You have entered " + integer + " which is lower than " + limitTwo + " which is the minimum.");
+                    Console.WriteLine("Resulting integer: " + limitTwo);
+                }
+
+                else if (integer > limitOne)
+                {
+                    Console.WriteLine("You have entered " + integer + " which is greater than " + limitOne + " which is the maximum.");
+                    Console.WriteLine("Resulting integer: " + limitOne);
+                }
+
+                else if ((integer >= limitTwo) && (integer <= limitOne))
+                {
+                    Console.WriteLine("It's allright your value is between your two limits!");
+                    Console.WriteLine("Resulting integer: " + integer);
+                }
+            }
+
+            else if (limitOne == limitTwo)
+            {
+                Console.WriteLine("Error: you can not write the same integer, your limits will be differents!");
+            }
+        }
+    }
+}
